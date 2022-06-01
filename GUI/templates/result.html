@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+{% endblock %}
+
+
+
+{% block body %}
+    
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+        <div class="inner">
+        <h2 class="masthead-brand"><a href="/"/>Doodle</h2>
+        <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="/">Home</a>
+        </nav>
+        </div>
+    </header>
+    <hr>
+    <div class="result">
+        <h4>Prediction Results For: {{Query}}</h4>
+        <hr>
+        {% for model_name,Prediction in result.items() %}
+            <h2>Feature Selection Technique: {{model_name}}</h2>
+            <p>Prediction: {{Prediction}}</p>
+            <br>
+        {% endfor %}
+    </div>
+
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>&copy Mustafa Bawany</p>
+        </div>
+      </footer>
+</div>
+{% endblock %}
